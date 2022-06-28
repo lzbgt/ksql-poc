@@ -2,10 +2,35 @@ https://docs.ksqldb.io/en/latest/how-to-guides/use-connector-management/
 
 https://stackoverflow.com/questions/31746182/docker-compose-wait-for-container-x-before-starting-y
 
-
 https://github.com/bitnami/bitnami-docker-kafka/issues/68
 
+```bash
+docker-compose up -d
+docker logs -f ksqldb-server
+
+CREATE SOURCE CONNECTOR s WITH (
+  'connector.class' = 'io.mdrogalis.voluble.VolubleSourceConnector',
+
+  'genkp.people.with' = '#{Internet.uuid}',
+  'genv.people.name.with' = '#{Name.full_name}',
+  'genv.people.creditCardNumber.with' = '#{Finance.credit_card}',
+
+  'global.throttle.ms' = '500'
+);
+
+show connectors;
+PRINT 'people' FROM BEGINNING;
+docker exec -it ksqldb-server curl http://localhost:8083/
+
+CREATE STREAM people WITH (
+    kafka_topic = 'people',
+    value_format = 'avro'
+);
+
 ```
+
+
+```yaml
 version: "2.1" # Note you should use 2.1 or up
 
 services:
@@ -41,3 +66,8 @@ volumes:
   kafka_data:
     driver: local
 ```
+
+
+https://docs.confluent.io/5.4.0/ksql/docs/developer-guide/ksql-connect.html
+
+https://docs.confluent.io/5.4.0/ksql/docs/developer-guide/ksql-connect.html
