@@ -1,3 +1,30 @@
+# ksql-poc
+
+[![Paid pipeline review](https://img.shields.io/badge/paid%20review-Kafka%20ksqlDB-175c4c)](https://x2.brucelu.top/streaming/?source=github-ksql-poc-top)
+[![Ask first](https://img.shields.io/badge/ask%20first-pre--sales-44546a)](https://x2.brucelu.top/products/contact/?offer=streaming&source=github-ksql-poc-top)
+[![Sample review](https://img.shields.io/badge/sample-review-6b7280)](https://x2.brucelu.top/streaming/sample/?source=github-ksql-poc-top)
+
+Kafka and ksqlDB proof-of-concept notes for Docker Compose, Schema Registry, embedded Connect, source connectors, and stream creation.
+
+## Paid review
+
+If you found this repo while debugging a Kafka/ksqlDB proof of concept, I offer a focused paid review:
+
+- Review page: https://x2.brucelu.top/streaming/?source=github-ksql-poc-top
+- Sample deliverable: https://x2.brucelu.top/streaming/sample/?source=github-ksql-poc-top
+- Ask a pre-sales question: https://x2.brucelu.top/products/contact/?offer=streaming&source=github-ksql-poc-top
+- Checkout: https://x2.brucelu.top/streaming/checkout/?source=github-ksql-poc-top
+
+The review covers advertised listeners, service readiness, Schema Registry, embedded Connect, connector configs, Avro converter settings, topic lifecycle, ksqlDB stream/table definitions, logs, and reset/replay commands.
+
+## Boundary
+
+This is remote engineering review and setup guidance. It does not include managed Kafka operation, cloud account administration, guaranteed data recovery, or custom feature delivery.
+
+---
+
+## Original notes
+
 https://docs.ksqldb.io/en/latest/how-to-guides/use-connector-management/
 
 https://stackoverflow.com/questions/31746182/docker-compose-wait-for-container-x-before-starting-y
